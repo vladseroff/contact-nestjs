@@ -9,11 +9,6 @@ import { MatchesModule } from 'src/matches/matches.module';
 @Module({
     controllers: [LikesController],
     providers: [LikesService],
-    imports: [
-        SequelizeModule.forFeature([Likes]),
-        AuthModule,
-        MatchesModule
-    ]
+    imports: [SequelizeModule.forFeature([Likes]), AuthModule, MatchesModule],
 })
 export class LikesModule {}
-

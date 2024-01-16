@@ -8,12 +8,7 @@ import { Matches } from './matches.model';
 @Module({
     controllers: [MatchesController],
     providers: [MatchesService],
-    imports: [
-        SequelizeModule.forFeature([Matches]),
-        AuthModule
-    ],
-    exports: [
-        MatchesService
-    ]
+    imports: [SequelizeModule.forFeature([Matches]), AuthModule],
+    exports: [MatchesService],
 })
 export class MatchesModule {}

@@ -1,4 +1,4 @@
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 interface MatchCreationAttrs {
     user_id_one: number;
@@ -6,15 +6,20 @@ interface MatchCreationAttrs {
 }
 
 @Table({
-    tableName: 'matches'
+    tableName: 'matches',
 })
 export class Matches extends Model<Matches, MatchCreationAttrs> {
-    @Column({type: DataType.INTEGER, unique: true, autoIncrement: true, primaryKey: true})
+    @Column({
+        type: DataType.INTEGER,
+        unique: true,
+        autoIncrement: true,
+        primaryKey: true,
+    })
     id: number;
 
-    @Column({type: DataType.INTEGER, allowNull: false})
+    @Column({ type: DataType.INTEGER, allowNull: false })
     user_id_one: number;
 
-    @Column({type: DataType.INTEGER, allowNull: false})
+    @Column({ type: DataType.INTEGER, allowNull: false })
     user_id_two: number;
 }

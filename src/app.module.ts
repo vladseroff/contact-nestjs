@@ -1,12 +1,12 @@
-import { Module } from "@nestjs/common";
-import { SequelizeModule } from "@nestjs/sequelize";
-import { ConfigModule } from "@nestjs/config";
+import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
-import { Users } from "./users/users.model";
+import { Users } from './users/users.model';
 import { LikesModule } from './likes/likes.module';
-import { Likes } from "./likes/likes.model";
+import { Likes } from './likes/likes.model';
 import { AuthModule } from './auth/auth.module';
-import { Matches } from "./matches/matches.model";
+import { Matches } from './matches/matches.model';
 import { MatchesModule } from './matches/matches.module';
 
 @Module({
@@ -14,7 +14,7 @@ import { MatchesModule } from './matches/matches.module';
     providers: [],
     imports: [
         ConfigModule.forRoot({
-            envFilePath: '.env'
+            envFilePath: '.env',
         }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
@@ -30,10 +30,7 @@ import { MatchesModule } from './matches/matches.module';
         UsersModule,
         LikesModule,
         AuthModule,
-        MatchesModule
-    ]
+        MatchesModule,
+    ],
 })
-
-export class AppModule {
-    
-}
+export class AppModule {}
